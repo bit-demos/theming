@@ -1,33 +1,41 @@
-# Welcome to your Bit Workspace
+# Theming in Bit
 
-To get started straight away run `bit start` and open [localhost:3000](http://localhost:3000). It may take a while to build the first time you run this command as it is building the whole User Interface for your development environment.
+This repo includes a demo of how to do theming in React and Bit using a theme provider and various themes.
 
-```bash
-bit start
+The button component shows how the theme provider is used.
+
+## Theme Provider
+
+Uses Bits component that converts design tokens from a JS object so they can be used as CSS variables without having to do any extra work.
+
+```js
+MyColorBackground: '#ffffff',
 ```
 
-## What's included
+Can then be used as:
 
-- **workspace.jsonc**
-
-This is the main configuration file of your bit workspace. Here you can modify the workspace name and icon as well as default directory and scope. It is where dependencies are found when you install anything. It is also where you register aspects, bit extensions as well as apply the environments for your components. This workspace has been setup so that all components use the React env. However you can create other components and apply other envs to them such as node, html, angular and aspect envs.
-
-- **.bitmap**
-
-This is an auto-generated file and includes the mapping of your components. There is one component included here. In order to remove this component you can run the following command.
-
-
-- **Demo Components**
-
-A folder (unless the --empty flag was used) containing demo components are included in this workspace. These components are used to demonstrate the different features of Bit. If you would like to remove these components you can run the following command.
-
-```jsx
-bit remove "ui/*" --delete files
+```css
+background: var(--my-color-background);
 ```
 
-This removes the components from the bitmap as well as removes the files.
+## Themes
 
+Themes can be used with the wrapper component to provide an easier way to add the theme to your app which can be useful especially when wrapping components inside of other themes.
 
-- **.gitignore**
+```js
+<DarkTheme>
+  <Button>Dark Theme</Button>
+</DarkTheme>
+```
 
-Ignoring any files from version control
+You can also write it like this which can be helpful for when using theme togglers or dynamically changing the theme value:
+
+```js
+<Theme.ThemeProvider overrides={dark}>
+  <Button>Pink Theme</Button>
+</Theme.ThemeProvider>
+```
+
+## Button
+
+Button component shows how the theme provider is used with various examples including using CSS variable and CSS in Js.
