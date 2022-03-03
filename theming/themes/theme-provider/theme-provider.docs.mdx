@@ -3,17 +3,34 @@ description: A ThemeProvider component.
 ---
 
 import { Theme } from './theme-provider';
+import { defaultTheme } from './default-theme-tokens';
+import { pinkTheme } from '@learn-bit-react/theming.themes.pink-theme';
 
 A component that does something special and renders text in a div.
 
 ### Component usage
 
 ```js
-<Theme>Hello world!</Theme>
+<Theme.ThemeProvider>
+  <p style={{ color: 'var(--bit-color-text' }}>Default Theme css vars</p>
+  <p style={{ color: defaultTheme.bitColorText }}>Default Theme js in css</p>
+</Theme.ThemeProvider>
 ```
 
-### Render hello world!
+### Render hello world in pink theme!
+
+```js
+<Theme.ThemeProvider overrides="pinkTheme">
+  <p style={{ color: 'var(--bit-color-text' }}>Pink Theme css vars</p>
+  <p style={{ color: pinkTheme.bitColorText }}>Pink Theme</p>
+</Theme.ThemeProvider>
+```
+
+### Render hello world in default theme!
 
 ```js live
-<Theme>Hello world!</Theme>
+<Theme.ThemeProvider>
+  <p style={{ color: 'var(--bit-color-text' }}>Default Theme css vars</p>
+  <p style={{ color: defaultTheme.bitColorText }}>Default Theme</p>
+</Theme.ThemeProvider>
 ```

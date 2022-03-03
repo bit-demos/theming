@@ -1,14 +1,11 @@
 import React from 'react';
-import { defaultDesignTokenValues, Theme } from './theme-provider';
-import { Button } from '@learn-bit-react/theming.ui.button';
+import { Theme } from './theme-provider';
+import { defaultTheme } from './default-theme-tokens';
 
 export const BasicThemeProvider = () => {
   return (
     <Theme.ThemeProvider>
-      <button style={{ color: defaultDesignTokenValues.bitColorText }}>
-        this works
-      </button>
-      <Button>Help</Button>
+      <p style={{ color: defaultTheme.bitColorText }}>Default Theme</p>
     </Theme.ThemeProvider>
   );
 };

@@ -1,2 +1,2 @@
 export { DarkTheme } from './dark-theme';
-export { dark } from './dark-theme-tokens';
+export { darkTheme } from './dark-theme-tokens';

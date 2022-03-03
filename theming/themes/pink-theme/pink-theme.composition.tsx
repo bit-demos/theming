@@ -3,6 +3,8 @@ import { PinkTheme } from './pink-theme';
 
 export const BasicPinkTheme = () => {
   return (
-    <PinkTheme>hello world!</PinkTheme>
+    <PinkTheme>
+      <p style={{ color: 'var(--bit-color-text' }}>hello world!</p>
+    </PinkTheme>
   );
-}
+};

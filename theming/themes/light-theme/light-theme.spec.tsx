@@ -4,6 +4,6 @@ import { BasicLightTheme } from './light-theme.composition';
 
 it('should render with the correct text', () => {
   const { getByText } = render(<BasicLightTheme />);
-  const rendered = getByText('hello world!');
+  const rendered = getByText('Light Theme');
   expect(rendered).toBeTruthy();
 });

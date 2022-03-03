@@ -1,9 +1,12 @@
 import React from 'react';
 import { Theme } from '@learn-bit-react/theming.themes.theme-provider';
-import { lightTheme as light } from '@learn-bit-react/theming.themes.light-theme';
+import { LightTheme } from '@learn-bit-react/theming.themes.light-theme';
 import { DarkTheme } from '@learn-bit-react/theming.themes.dark-theme';
 
-import { pinkTheme } from '@learn-bit-react/theming.themes.pink-theme';
+import {
+  PinkTheme,
+  pinkTheme,
+} from '@learn-bit-react/theming.themes.pink-theme';
 import { Button } from './button';
 
 export const ButtonNoTheme = () => {
@@ -66,6 +69,9 @@ export const ButtonMultipleThemes = () => {
       <DarkTheme>
         <Button>Dark Theme</Button>
       </DarkTheme>
+      <LightTheme>
+        <Button style={{ margin: '10px 0' }}>Light Theme</Button>
+      </LightTheme>
     </Theme.ThemeProvider>
   );
 };

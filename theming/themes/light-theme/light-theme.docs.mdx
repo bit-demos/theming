@@ -2,18 +2,30 @@
 description: A LightTheme component.
 ---
 
-import { lightTheme } from './light-theme';
+import { LightTheme } from './light-theme';
 
-A component that does something special and renders text in a div.
+A wrapper component that uses the theme provider and passes in the light theme. You can then just wrap any component in the LightTheme component for the light theme to be applied.
+
+Alternatively you can import the light theme and use the theme provider overrides prop to add the light theme.
 
 ### Component usage
 
 ```js
-<LightTheme>Hello world!</LightTheme>
+<LightTheme>
+  <p style={{ color: 'var(--bit-color-text' }}>hello world!</p>
+</LightTheme>
 ```
 
-### Render hello world!
+```js
+<Theme.ThemeProvider overrides="lightTheme">
+  <p style={{ color: 'var(--bit-color-text' }}>hello world!</p>
+</Theme.ThemeProvier>
+```
+
+### Render hello world in Light Theme!
 
 ```js live
-<LightTheme>Hello world!</LightTheme>
+<LightTheme>
+  <p style={{ color: 'var(--bit-color-text' }}>hello world!</p>
+</LightTheme>
 ```

@@ -1,1 +1,2 @@
-export { pinkTheme } from './pink-theme';
+export { PinkTheme } from './pink-theme';
+export { pinkTheme } from './pink-theme-tokens';

@@ -3,6 +3,8 @@ import { LightTheme } from './light-theme';
 
 export const BasicLightTheme = () => {
   return (
-    <LightTheme>hello world!</LightTheme>
+    <LightTheme>
+      <p style={{ color: 'var(--bit-color-text' }}>hello world!</p>
+    </LightTheme>
   );
-}
+};

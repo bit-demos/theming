@@ -4,15 +4,28 @@ description: A DarkTheme component.
 
 import { DarkTheme } from './dark-theme';
 
-A component that does something special and renders text in a div.
+A wrapper component that uses the theme provider and passes in the light theme. You can then just wrap any component in the LightTheme component for the light theme to be applied.
+
+Alternatively you can import the light theme and use the theme provider overrides prop to add the light theme.
 
 ### Component usage
+
 ```js
-<DarkTheme>Hello world!</DarkTheme>
+<DarkTheme>
+  <p style={{ color: 'var(--bit-color-text' }}>hello world!</p>
+</DarkTheme>
 ```
 
-### Render hello world!
+```js
+<Theme.ThemeProvider overrides="darkTheme">
+  <p style={{ color: 'var(--bit-color-text' }}>hello world!</p>
+</Theme.ThemeProvier>
+```
+
+### Render hello world in Dark Theme!
 
 ```js live
-<DarkTheme>Hello world!</DarkTheme>
+<DarkTheme>
+  <p style={{ color: 'var(--bit-color-text' }}>hello world!</p>
+</DarkTheme>
 ```

@@ -1,1 +1,2 @@
-export { Theme, defaultDesignTokenValues } from './theme-provider';
+export { Theme } from './theme-provider';
+export type { ThemeSchema } from './default-theme-tokens';

@@ -2,18 +2,30 @@
 description: A PinkTheme component.
 ---
 
-import { pinkTheme } from './pink-theme';
+import { PinkTheme } from './pink-theme';
 
-A component that does something special and renders text in a div.
+A wrapper component that uses the theme provider and passes in the light theme. You can then just wrap any component in the LightTheme component for the light theme to be applied.
+
+Alternatively you can import the light theme and use the theme provider overrides prop to add the light theme.
 
 ### Component usage
 
 ```js
-<PinkTheme>Hello world!</PinkTheme>
+<PinkTheme>
+  <p style={{ color: 'var(--bit-color-text' }}>hello world!</p>
+</PinkTheme>
 ```
 
-### Render hello world!
+```js
+<Theme.ThemeProvider overrides="pinkTheme">
+  <p style={{ color: 'var(--bit-color-text' }}>hello world!</p>
+</Theme.ThemeProvier>
+```
+
+### Render hello world in Pink Theme!
 
 ```js live
-<PinkTheme>Hello world!</PinkTheme>
+<PinkTheme>
+  <p style={{ color: 'var(--bit-color-text' }}>hello world!</p>
+</PinkTheme>
 ```

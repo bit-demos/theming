@@ -4,6 +4,6 @@ import { BasicPinkTheme } from './pink-theme.composition';
 
 it('should render with the correct text', () => {
   const { getByText } = render(<BasicPinkTheme />);
-  const rendered = getByText('hello world!');
+  const rendered = getByText('PinkTheme');
   expect(rendered).toBeTruthy();
 });
