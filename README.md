@@ -31,7 +31,7 @@ Themes can be used with the wrapper component to provide an easier way to add th
 You can also write it like this which can be helpful for when using theme togglers or dynamically changing the theme value:
 
 ```js
-<Theme.ThemeProvider overrides={dark}>
+<Theme.ThemeProvider overrides={darkTheme}>
   <Button>Pink Theme</Button>
 </Theme.ThemeProvider>
 ```
