@@ -11,31 +11,31 @@
 {
     "themes/dark-theme": {
         "scope": "",
-        "version": "",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "theming/themes/dark-theme"
     },
     "themes/light-theme": {
         "scope": "",
-        "version": "",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "theming/themes/light-theme"
     },
     "themes/pink-theme": {
         "scope": "",
-        "version": "",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "theming/themes/pink-theme"
     },
     "themes/theme-provider": {
         "scope": "",
-        "version": "",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "theming/themes/theme-provider"
     },
     "ui/button": {
         "scope": "",
-        "version": "",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "theming/ui/button"
     },
