@@ -1,9 +1,18 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { BasicThemeProvider } from './theme-provider.composition';
+import { render, screen } from '@testing-library/react';
+import {
+  ThemeProviderCSSVars,
+  ThemeProviderCSSJS,
+} from './theme-provider.composition';
 
-it.skip('should render with the correct text', () => {
-  const { getByText } = render(<BasicThemeProvider />);
-  const rendered = getByText('Default Theme');
-  expect(rendered).toBeTruthy();
+it('should have style with css var and correct color', () => {
+  render(<ThemeProviderCSSVars />);
+  const themeProviderCSSVars = screen.getByTestId('theme-provider');
+  expect(themeProviderCSSVars).toHaveStyle('--my-color-text:purple');
+});
+
+it('should have style with css var and correct color', () => {
+  render(<ThemeProviderCSSJS />);
+  const themeProviderCSSJS = screen.getByTestId('theme-provider');
+  expect(themeProviderCSSJS).toHaveStyle('--my-color-text:purple');
 });

@@ -1,9 +1,9 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { ButtonNoTheme } from './button.composition';
+import { render, screen } from '@testing-library/react';
+import { ButtonCSSVars } from './button.composition';
 
-it.skip('should render with the correct text', () => {
-  const { getByText } = render(<ButtonNoTheme />);
-  const rendered = getByText('hello world!');
-  expect(rendered).toBeTruthy();
+it('should have style with css var and correct color', () => {
+  render(<ButtonCSSVars />);
+  const buttonCSSVars = screen.getByTestId('theme-provider');
+  expect(buttonCSSVars).toHaveStyle('--my-color-text:purple');
 });

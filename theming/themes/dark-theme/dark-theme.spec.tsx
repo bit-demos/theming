@@ -1,9 +1,15 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { BasicDarkTheme } from './dark-theme.composition';
+import { render, screen } from '@testing-library/react';
+import { DarkThemeCCSVars, DarkThemeCSSJS } from './dark-theme.composition';
 
-it.skip('should render with the correct text', () => {
-  const { getByText } = render(<BasicDarkTheme />);
-  const rendered = getByText('hello world!');
-  expect(rendered).toBeTruthy();
+it('should have style with css var and correct color', () => {
+  render(<DarkThemeCCSVars />);
+  const darkThemeCCSVars = screen.getByTestId('theme-provider');
+  expect(darkThemeCCSVars).toHaveStyle('--my-color-text:red');
+});
+
+it('should have style with css var and with correct color', () => {
+  render(<DarkThemeCSSJS />);
+  const darkThemeCSSJS = screen.getByTestId('theme-provider');
+  expect(darkThemeCSSJS).toHaveStyle('--my-color-text:red');
 });

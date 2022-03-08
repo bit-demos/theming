@@ -31,7 +31,7 @@ export const ButtonOverrideTheme = () => {
 
 export const ButtonCSSVars = () => {
   return (
-    <Theme.ThemeProvider>
+    <Theme.ThemeProvider data-testid="theme-provider">
       <Button
         style={{
           color: 'var(--my-color-text)',

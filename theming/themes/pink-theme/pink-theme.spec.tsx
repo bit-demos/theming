@@ -1,9 +1,15 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { BasicPinkTheme } from './pink-theme.composition';
+import { render, screen } from '@testing-library/react';
+import { PinkThemeCSSVars, PinkThemeCSSJS } from './pink-theme.composition';
 
-it.skip('should render with the correct text', () => {
-  const { getByText } = render(<BasicPinkTheme />);
-  const rendered = getByText('hello world!');
-  expect(rendered).toBeTruthy();
+it('should have style with css var and correct color', () => {
+  render(<PinkThemeCSSVars />);
+  const pinkThemeCSSVars = screen.getByTestId('theme-provider');
+  expect(pinkThemeCSSVars).toHaveStyle('--my-color-text:hotpink');
+});
+
+it('should have style with css var and correct color', () => {
+  render(<PinkThemeCSSJS />);
+  const pinkThemeCSSJS = screen.getByTestId('theme-provider');
+  expect(pinkThemeCSSJS).toHaveStyle('--my-color-text:hotpink');
 });

@@ -11,7 +11,7 @@ export const PinkThemeCSSVars = () => {
           backgroundColor: 'var(--my-color-background',
         }}
       >
-        hello world!
+        pink theme
       </p>
     </PinkTheme>
   );
@@ -26,7 +26,7 @@ export const PinkThemeCSSJS = () => {
           backgroundColor: pinkTheme.myColorBackground,
         }}
       >
-        hello world!
+        pink theme
       </p>
     </PinkTheme>
   );

@@ -1,10 +1,33 @@
 import React from 'react';
 import { LightTheme } from './light-theme';
+import { lightTheme } from './light-theme-tokens';
 
-export const BasicLightTheme = () => {
+export const LightThemeCSSVars = () => {
   return (
     <LightTheme>
-      <p style={{ color: 'var(--my-color-text' }}>hello world!</p>
+      <p
+        style={{
+          color: 'var(--my-color-text',
+          backgroundColor: 'var(--my-color-background',
+        }}
+      >
+        Light Theme
+      </p>
+    </LightTheme>
+  );
+};
+
+export const LightThemeCSSJS = () => {
+  return (
+    <LightTheme>
+      <p
+        style={{
+          color: lightTheme.myColorText,
+          backgroundColor: lightTheme.myColorBackground,
+        }}
+      >
+        hello world!
+      </p>
     </LightTheme>
   );
 };
