@@ -34,7 +34,7 @@ export const ButtonCSSVars = () => {
     <Theme.ThemeProvider>
       <Button
         style={{
-          color: 'var(--bit-color-text)',
+          color: 'var(--my-color-text)',
         }}
       >
         CSS Vars
@@ -48,7 +48,7 @@ export const ButtonCSSInJS = () => {
     <Theme.ThemeProvider>
       <Button
         style={{
-          color: pinkTheme.bitColorText,
+          color: pinkTheme.myColorText,
         }}
       >
         CSS in JS

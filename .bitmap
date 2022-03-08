@@ -10,31 +10,31 @@
 
 {
     "themes/dark-theme": {
-        "scope": "",
+        "scope": "learn-bit-react.theming",
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "theming/themes/dark-theme"
     },
     "themes/light-theme": {
-        "scope": "",
+        "scope": "learn-bit-react.theming",
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "theming/themes/light-theme"
     },
     "themes/pink-theme": {
-        "scope": "",
+        "scope": "learn-bit-react.theming",
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "theming/themes/pink-theme"
     },
     "themes/theme-provider": {
-        "scope": "",
+        "scope": "learn-bit-react.theming",
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "theming/themes/theme-provider"
     },
     "ui/button": {
-        "scope": "",
+        "scope": "learn-bit-react.theming",
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "theming/ui/button"

@@ -1,2 +1,2 @@
 export { Theme } from './theme-provider';
-export type { ThemeSchema } from './default-theme-tokens';
+export type { ThemeSchema } from './theme-schema';

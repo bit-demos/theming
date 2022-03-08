@@ -5,7 +5,7 @@ import { defaultTheme } from './default-theme-tokens';
 export const BasicThemeProvider = () => {
   return (
     <Theme.ThemeProvider>
-      <p style={{ color: defaultTheme.bitColorText }}>Default Theme</p>
+      <p style={{ color: defaultTheme.myColorText }}>Default Theme</p>
     </Theme.ThemeProvider>
   );
 };

@@ -1,24 +1,9 @@
-export type ThemeSchema = typeof defaultTheme;
+import { ThemeSchema } from './theme-schema';
 
-export const defaultTheme = {
-  /**
-   * general purpose background color.
-   */
-  bitColorBackground: '#ffffff',
-  /**
-   * general purpose text color.
-   */
-  bitColorText: 'purple',
-  /**
-   * general purpose font size.
-   */
-  bitFontSize: '40px',
-  /**
-   * general purpose border color.
-   */
-  bitBorderColor: 'purple',
-  /**
-   * general purpose border radius.
-   */
-  bitBorderRadius: '5px',
+export const defaultTheme: ThemeSchema = {
+  myColorBackground: '#ffffff',
+  myColorText: 'purple',
+  myFontSize: '40px',
+  myBorderColor: 'purple',
+  myBorderRadius: '5px',
 };
