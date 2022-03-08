@@ -80,9 +80,9 @@
       "teambit.harmony/node": {}
     },
     /**
-     * configures components with namespace 'content' to use the MDX dev environment.
+     * configures readme to use the MDX dev environment.
      */
-    "{content/**}": {
+    "{readme}": {
       "teambit.mdx/mdx": {}
     },
     /**
