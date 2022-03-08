@@ -6,9 +6,13 @@ import { Theme } from './theme-provider';
 import { defaultTheme } from './default-theme-tokens';
 import { pinkTheme } from '@learn-bit-react/theming.themes.pink-theme';
 
-A component that does something special and renders text in a div.
+Theme Provider component including design tokens and values for a default theme and possibilites to override these values with light/dark/custom themes.
 
-### Component usage
+Design tokens are converted into CSS Vars and therefore can be used in your components using CSS Vars both inline or by adding a stylesheet to your component and referencing the CSS Var or in the style tag as CSS in JS.
+
+This means that `myColorText` will be converted into `--my-color-text` and can be used in your component as `color: var(--my-color-text)`.
+
+### Render hello world in the Default Theme
 
 ```js
 <Theme.ThemeProvider>
@@ -17,9 +21,29 @@ A component that does something special and renders text in a div.
 </Theme.ThemeProvider>
 ```
 
-### Render hello world in pink theme!
+### CSS as Separate File
+
+```css
+.text {
+  color: var(--my-color-text);
+}
+```
+
+Import Style and add as a class.
 
 ```js
+import style from './text.module.css';
+
+<Theme.ThemeProvider>
+  <p className={style.text}>Default Theme css vars</p>
+</Theme.ThemeProvider>;
+```
+
+### Override Default Theme with Pink Theme
+
+```js
+// import {pinkTheme} from '...'
+
 <Theme.ThemeProvider overrides="pinkTheme">
   <p style={{ color: 'var(--my-color-text' }}>Pink Theme css vars</p>
   <p style={{ color: pinkTheme.myColorText }}>Pink Theme</p>

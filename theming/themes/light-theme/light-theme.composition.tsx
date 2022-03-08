@@ -31,3 +31,19 @@ export const LightThemeCSSJS = () => {
     </LightTheme>
   );
 };
+
+export const LightThemeDefaultFontSize = () => {
+  return (
+    <LightTheme>
+      <p
+        style={{
+          color: 'var(--my-color-text',
+          backgroundColor: 'var(--my-color-background',
+          fontSize: 'var(--my-font-size)',
+        }}
+      >
+        Light Theme
+      </p>
+    </LightTheme>
+  );
+};

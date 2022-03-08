@@ -4,9 +4,11 @@ description: A LightTheme component.
 
 import { LightTheme } from './light-theme';
 
-A wrapper component that uses the theme provider and passes in the light theme. You can then just wrap any component in the LightTheme component for the light theme to be applied.
+A wrapper component that uses the theme provider and passes in the light theme. You can then just wrap any component in the `<LightTheme>` component for the light theme to be applied.
 
 Alternatively you can import the light theme and use the theme provider overrides prop to add the light theme.
+
+The Light Theme uses all of the default tokens and values and overrides any values that have been set in the `light-theme-token.tsx` file. Any new tokens can also be added here and used.
 
 ### Component usage
 
