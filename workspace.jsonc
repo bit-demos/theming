@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
- **/ {
+ **/{
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -39,7 +39,9 @@
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "dependencies": {
+        "@teambit/base-react.layout.grid": "1.95.0",
         "@teambit/base-react.theme.theme-provider": "1.95.0",
+        "@teambit/design.ui.panels.tabs": "1.0.10",
         "@teambit/eslint-config-bit-react": "~0.0.367",
         "@typescript-eslint/eslint-plugin": "4.29.3",
         "eslint-import-resolver-node": "0.3.6",

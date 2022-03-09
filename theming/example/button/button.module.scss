@@ -4,4 +4,10 @@
   border: 1px solid var(--my-border-color);
   border-radius: var(--my-border-radius);
   padding: 5px;
+  font-size: var(--my-font-size);
+  cursor: pointer;
+  &:hover {
+    color: var(--my-color-background);
+    background-color: var(--my-color-text);
+  }
 }

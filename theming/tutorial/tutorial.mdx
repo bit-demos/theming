@@ -1,31 +1,71 @@
-## Create your Theme Provider Component
+import { Button } from '@learn-bit-react/theming.example.button';
+import { Theme } from '@learn-bit-react/theming.themes.theme-provider';
+import {
+  darkTheme,
+  DarkTheme,
+} from '@learn-bit-react/theming.themes.dark-theme';
+import { Grid, GridProps } from '@teambit/base-react.layout.grid';
 
-1. Add a `theme-schema.tsx` file which should include all design token types that can be used to create your theme.
+**In this tutorial we will**:
+
+- create a Theme Provider with default design tokens and a theme schema
+- use the theme to wrap a button component
+- create a dark theme that uses the theme provider and overrides some design tokens
+- use multiple themes in the one app
+
+<Theme.ThemeProvider>
+  <div style={{ display: 'flex', flexDirection: 'col' }}>
+    <Button style={{ marginRight: '20px' }}>Default Theme</Button>
+    <DarkTheme>
+      <Button>Dark Theme</Button>
+    </DarkTheme>
+  </div>
+</Theme.ThemeProvider>
+
+## Step 1: Create your Theme Provider Component
+
+1. Create a new theme provider component.
+
+```bash
+bit create react themes/theme-provider
+```
+
+2. Add a `theme-schema.tsx` file and include all types for your design tokens.
 
 ```js
 export type ThemeSchema = {
-  /**
-   * general purpose text color.
-   */
-  myColorText?: string,
+  myColorText?: string
+  myFontSize?: string
+  myBorderColor?: string
+  myBorderRadius?: string
 };
 ```
 
-Types can be required in the case you want every theme to have the exact same design tokens, meaning a light theme will be an exact copy of the dark theme but with different values.
+:::tip optional types
+Add a '?' to make the tokens optional so you can use tokens from the default theme aswell as override any tokens the theme wants to change.
+:::
 
-If you choose to leave the types as optional it means the default theme can be used but can have certain tokens be overrriden by the dark theme / custom theme etc.
-
-2. Add a `default-theme-tokens.tsx` file which should include all design tokens and values that you would like to use for your default theme.
+3. Add a `default-theme-tokens.tsx` file which should include all design tokens and values for your default theme.
 
 ```Js
 import { ThemeSchema } from './theme-schema';
 
 export const defaultTheme: ThemeSchema = {
-  myColorText: '#000',
+  myColorBackground: '#ffffff',
+  myColorText: 'purple',
+  myFontSize: '26px',
+  myBorderColor: 'purple',
+  myBorderRadius: '5px',
 };
 ```
 
-3. Modify the `theme-provider.tsx` file to import the `createTheme` component from teambit and the `defaultTheme` from the default theme tokens file you just created. Then crate your theme using the `createTheme() passing into it the `defaultTheme` as the value for the theme.
+4. Install the `ThemeProvider` component from teambit.
+
+```bash
+bit install @teambit/base-react.theme.theme-provider
+```
+
+5. Import the `createTheme` function from teambit's Theme Provider component and the `defaultTheme` from the `default-theme-tokens` file in your `theme-provider.tsx` file. Create your theme using the `createTheme()` function passing into it the `defaultTheme` as the value for theme.
 
 ```js
 import { createTheme } from '@teambit/base-react.theme.theme-provider';
@@ -36,21 +76,72 @@ export const Theme = createTheme({
 });
 ```
 
-4. Add compositions, tests and docs as per this example.
+:::note design tokens are converted automatically
+You supply the design tokens directly to the createTheme function and it does the rest for you to convert the tokens to usable css (both in modules and directly in your css)
+:::
 
-## Create a dark theme component.
+6. Add [compositions](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/theme-provider.composition.tsx), [tests](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/theme-provider.spec.tsx) and [docs](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/theme-provider.docs.mdx).
 
-1. Add a `dark-theme-tokens.tsx` file with the design tokens as per default theme and modify the values.
+## Step 2: Use your Theme Provider
+
+1. Import the Theme from the ThemeProvider component you created.
+
+```js
+import { Theme } from '@learn-bit-react/theming.themes.theme-provider';
+```
+
+2. Wrap all components in the theme provider to see the theme applied to your components.
+
+```js
+import React from 'react';
+import { Theme } from '@learn-bit-react/theming.themes.theme-provider';
+import { Button } from '@learn-bit-react/theming.example.button';
+
+export const MyApp = () => {
+  return (
+    <Theme.ThemeProvider>
+      <Button>Hello</Button>
+    </Theme.ThemeProvider>
+  );
+};
+```
+
+### Button using Default Theme
+
+<Theme.ThemeProvider>
+  <Button>Hello</Button>
+</Theme.ThemeProvider>
+<br />
+
+:::tip Use our Button component for demo purposes.
+You can install and use the Button component from this demo as an example or create your own and add some styles to it.
+:::
+
+## Step 3: Create a Dark Theme Component.
+
+1. Create a new theme component.
+
+```bash
+bit create react themes/dark-theme
+```
+
+2. Add a `dark-theme-tokens.tsx` file with the design tokens and values you want to override from the default theme.
 
 ```js
 import { ThemeSchema } from '@learn-bit-react/theming.themes.theme-provider';
 
 export const darkTheme: ThemeSchema = {
+  myColorBackground: '#000',
   myColorText: 'red',
+  myBorderColor: 'red',
 };
 ```
 
-2. Import the `Theme` from the the theme provider component you just created. Also import the `darkTheme` from the dark theme tokens file. Add the darkTheme to the overrides prop of the theme provider.
+:::tip add type checking
+Import the ThemeSchema for type checking.
+:::
+
+3. Import the `Theme` from the the theme provider component you just created as well as the `darkTheme` from the `dark-theme-tokens` file.
 
 ```Js
 import React from 'react';
@@ -66,39 +157,52 @@ export const DarkTheme = ({ children }) => {
 };
 ```
 
-3. Make sure your index file is exporting both the `DarkTheme` component as well as the `darkTheme` tokens.
+:::info override the theme
+Add the darkTheme to the overrides prop of the theme provider.
+:::
+
+4. Make sure your index file is exporting both the `DarkTheme` component as well as the `darkTheme` tokens.
 
 ```Js
 export { DarkTheme } from './dark-theme';
 export { darkTheme } from './dark-theme-tokens';
 ```
 
-4. Add compositions, tests and docs as per this example.
+5. Add [compositions](https://bit.dev/learn-bit-react/theming/themes/dark-theme/~code/dark-theme.composition.tsx), [tests](https://bit.dev/learn-bit-react/theming/themes/dark-theme/~code/dark-theme.spec.tsx) and [docs](https://bit.dev/learn-bit-react/theming/themes/dark-theme/~code/dark-theme.docs.mdx).
 
-## Use your Theme in a Component
+## Step 4: Use your Theme in a Component
 
-1. Import the Theme from the ThemeProvider component you created as well as the DarkTheme and any components you want to add to your app.
+1. Import the Theme from the ThemeProvider component you created as well as the DarkTheme and any components you want to render.
 
 ```js
 import React from 'react';
-import { Theme } from '@...';
-import { DarkTheme } from '@...';
-import { Button } from '@...';
+import { Theme } from '@learn-bit-react/theming.themes.theme-provider';
+import { DarkTheme } from '@learn-bit-react/theming.themes.dark-theme';
+import { Button } from '@learn-bit-react/theming.example.button';
 ```
 
-Inside your component you can now use the Theme Provider to wrap all components so they will get the theme applied.
+Wrap all components in the Theme Provider component and use the overrides prop to change the theme to darkTheme.
 
 ```js
 export const MyApp = () => {
   return (
     <Theme.ThemeProvider overrides={darkTheme}>
-      <Button>Pink Theme</Button>
+      <Button>Hello</Button>
     </Theme.ThemeProvider>
   );
 };
 ```
 
-You can alternatively use the component like this which will work exatly the same as the example above.
+### Button with Dark Theme applied
+
+<Theme.ThemeProvider overrides={darkTheme}>
+  <Button>Hello</Button>
+</Theme.ThemeProvider>
+<br />
+
+:::info Use theme like a wrapper component
+You can alternatively use the component like this which will work exactly the same as the example above.
+:::
 
 ```js
 export const MyApp = () => {
@@ -110,7 +214,9 @@ export const MyApp = () => {
 };
 ```
 
-You can also use the default theme in your app and have a part of your app be wrapped in a different theme.
+### Multiple Themes
+
+You can also use the default theme and have a part of your app be wrapped in a different theme.
 
 ```js
 export const MyApp = () => {
@@ -125,3 +231,18 @@ export const MyApp = () => {
   );
 };
 ```
+
+### Buttons with Multiple themes applied
+
+<Theme.ThemeProvider>
+  <Button style={{ marginBottom: '10px' }}>Default Theme</Button>
+  <DarkTheme>
+    <Button>Dark Theme</Button>
+  </DarkTheme>
+</Theme.ThemeProvider>
+
+## Mission Accomplished
+
+Well done on completing this tutorial. For more info on how the components work check out the [readme](https://bit.dev/learn-bit-react/theming/readme) or the [example button component](https://bit.dev/learn-bit-react/theming/example/button). Also check out the [theme provider component](https://bit.dev/learn-bit-react/theming/themes/theme-provider) and [dark theme](https://bit.dev/learn-bit-react/theming/themes/dark-theme).
+
+<br />

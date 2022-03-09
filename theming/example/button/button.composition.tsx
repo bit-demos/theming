@@ -35,6 +35,7 @@ export const ButtonCSSVars = () => {
       <Button
         style={{
           color: 'var(--my-color-text)',
+          backgroundColor: 'var(--my-color-background)',
         }}
       >
         CSS Vars
@@ -70,7 +71,7 @@ export const ButtonMultipleThemes = () => {
         <Button>Dark Theme</Button>
       </DarkTheme>
       <LightTheme>
-        <Button style={{ margin: '10px 0' }}>Light Theme</Button>
+        <Button style={{ marginTop: '10px' }}>Light Theme</Button>
       </LightTheme>
     </Theme.ThemeProvider>
   );

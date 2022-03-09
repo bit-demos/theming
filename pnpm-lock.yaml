@@ -6,7 +6,9 @@ importers:
     specifiers:
       '@babel/runtime': 7.12.18
       '@mdx-js/react': 1.6.22
+      '@teambit/base-react.layout.grid': 1.95.0
       '@teambit/base-react.theme.theme-provider': 1.95.0
+      '@teambit/design.ui.panels.tabs': 1.0.10
       '@teambit/eslint-config-bit-react': ~0.0.367
       '@teambit/mdx.ui.mdx-scope-context': 0.0.368
       '@testing-library/react': 12.0.0
@@ -27,7 +29,9 @@ importers:
       react-dom: 17.0.2
     dependencies:
       '@mdx-js/react': registry.npmjs.org/@mdx-js/react/1.6.22_react@17.0.2
+      '@teambit/base-react.layout.grid': 1.95.0_98ebc86690818fd42fa7c367a552ad25
       '@teambit/base-react.theme.theme-provider': 1.95.0_react-dom@17.0.2+react@17.0.2
+      '@teambit/design.ui.panels.tabs': registry.npmjs.org/@teambit/design.ui.panels.tabs/1.0.10_react-dom@17.0.2+react@17.0.2
       '@teambit/eslint-config-bit-react': registry.npmjs.org/@teambit/eslint-config-bit-react/0.0.367_42c1a70dd5598d21f152f1cd353fd960
       '@teambit/mdx.ui.mdx-scope-context': registry.npmjs.org/@teambit/mdx.ui.mdx-scope-context/0.0.368_react-dom@17.0.2+react@17.0.2
       '@testing-library/react': registry.npmjs.org/@testing-library/react/12.0.0_react-dom@17.0.2+react@17.0.2
@@ -49,6 +53,9 @@ importers:
       '@types/react-dom': registry.npmjs.org/@types/react-dom/17.0.11
       '@types/testing-library__jest-dom': registry.npmjs.org/@types/testing-library__jest-dom/5.9.5
 
+  theming/example/button:
+    specifiers: {}
+
   theming/readme:
     specifiers: {}
 
@@ -61,16 +68,25 @@ importers:
   theming/themes/pink-theme:
     specifiers: {}
 
-  theming/themes/theme-context:
-    specifiers: {}
-
   theming/themes/theme-provider:
     specifiers: {}
 
-  theming/ui/button:
+  theming/tutorial:
     specifiers: {}
 
 packages:
+
+  /@teambit/base-react.layout.grid/1.95.0_98ebc86690818fd42fa7c367a552ad25:
+    resolution: {integrity: sha1-jdxZwiSBGxUC4nYoYn42oOpGYns=, tarball: '@teambit/base-react.layout.grid/-/@teambit-base-react.layout.grid-1.95.0.tgz'}
+    peerDependencies:
+      '@testing-library/react': 12.0.0
+      react: ^16.8.0 || ^17.0.0
+    dependencies:
+      '@testing-library/react': registry.npmjs.org/@testing-library/react/12.0.0_react-dom@17.0.2+react@17.0.2
+      classnames: registry.npmjs.org/classnames/2.3.1
+      core-js: registry.npmjs.org/core-js/3.21.1
+      react: registry.npmjs.org/react/17.0.2
+    dev: false
 
   /@teambit/base-react.theme.theme-provider/1.95.0_react-dom@17.0.2+react@17.0.2:
     resolution: {integrity: sha1-c4SzSRqf0H94JUk+vcxSp1qrNnY=, tarball: '@teambit/base-react.theme.theme-provider/-/@teambit-base-react.theme.theme-provider-1.95.0.tgz'}
@@ -438,6 +454,22 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': registry.npmjs.org/@nodelib/fs.scandir/2.1.5
       fastq: registry.npmjs.org/fastq/1.13.0
+    dev: false
+
+  registry.npmjs.org/@teambit/design.ui.panels.tabs/1.0.10_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-QJS0tQhqIz4cT83BYQCVOdC6HxPJCs808gRO0FrODBTTcRnvDEgEY2HrZBoip4u6AhsaTTgdTWlcUozlHEzZjQ==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/@teambit/design.ui.panels.tabs/-/design.ui.panels.tabs-1.0.10.tgz}
+    id: registry.npmjs.org/@teambit/design.ui.panels.tabs/1.0.10
+    name: '@teambit/design.ui.panels.tabs'
+    version: 1.0.10
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0
+      react-dom: ^16.8.0 || ^17.0.0
+    dependencies:
+      classnames: registry.npmjs.org/classnames/2.3.1
+      core-js: registry.npmjs.org/core-js/3.21.1
+      react: registry.npmjs.org/react/17.0.2
+      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react-tabs: registry.npmjs.org/react-tabs/3.2.0_react@17.0.2
     dev: false
 
   registry.npmjs.org/@teambit/eslint-config-bit-react/0.0.367_42c1a70dd5598d21f152f1cd353fd960:
@@ -1189,6 +1221,19 @@ packages:
     resolution: {integrity: sha512-mKKUkUbhPpQlCOfIuZkvSEgktjPFIsZKRRbC6KWVEMvlzblj3i3asQv5ODsrwt0N3pHAEvjP8KTQPHkp0+6jOg==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/character-reference-invalid/-/character-reference-invalid-1.1.4.tgz}
     name: character-reference-invalid
     version: 1.1.4
+    dev: false
+
+  registry.npmjs.org/classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/classnames/-/classnames-2.3.1.tgz}
+    name: classnames
+    version: 2.3.1
+    dev: false
+
+  registry.npmjs.org/clsx/1.1.1:
+    resolution: {integrity: sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/clsx/-/clsx-1.1.1.tgz}
+    name: clsx
+    version: 1.1.1
+    engines: {node: '>=6'}
     dev: false
 
   registry.npmjs.org/collapse-white-space/1.0.6:
@@ -2615,6 +2660,19 @@ packages:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz}
     name: react-is
     version: 17.0.2
+
+  registry.npmjs.org/react-tabs/3.2.0_react@17.0.2:
+    resolution: {integrity: sha512-q7oNapNRoYTQq8gDhApXwdBheuuN5qQ4YvUaQUAkb6OSSttJulBAvxJ0FS6W5uojvMxbbIZKu1f2I+GXISoLjw==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/react-tabs/-/react-tabs-3.2.0.tgz}
+    id: registry.npmjs.org/react-tabs/3.2.0
+    name: react-tabs
+    version: 3.2.0
+    peerDependencies:
+      react: ^16.3.0 || ^17.0.0-0
+    dependencies:
+      clsx: registry.npmjs.org/clsx/1.1.1
+      prop-types: registry.npmjs.org/prop-types/15.8.1
+      react: registry.npmjs.org/react/17.0.2
+    dev: false
 
   registry.npmjs.org/react/17.0.2:
     resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/react/-/react-17.0.2.tgz}
