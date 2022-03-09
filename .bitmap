@@ -39,6 +39,12 @@
         "mainFile": "index.ts",
         "rootDir": "theming/themes/theme-provider"
     },
+    "tutorial": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "theming/tutorial"
+    },
     "ui/button": {
         "scope": "learn-bit-react.theming",
         "version": "0.0.3",

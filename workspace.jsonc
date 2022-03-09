@@ -80,9 +80,9 @@
       "teambit.harmony/node": {}
     },
     /**
-     * configures readme to use the MDX dev environment.
+     * configures readme and tutorial to use the MDX dev environment.
      */
-    "{readme}": {
+    "{readme}, {tutorial}": {
       "teambit.mdx/mdx": {}
     },
     /**
