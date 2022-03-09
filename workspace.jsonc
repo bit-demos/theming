@@ -69,7 +69,7 @@
      * to use the default React development environment.
      *
      */
-    "{ui/**}, {blocks/**}, {pages/**}, {themes/**}": {
+    "{ui/**}, {blocks/**}, {pages/**}, {themes/**}, {example/**}": {
       "teambit.react/react": {}
     },
     /**

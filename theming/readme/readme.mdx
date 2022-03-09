@@ -2,21 +2,21 @@
 
 This example includes a demo of how to do theming in React and Bit using a theme provider and various themes.
 
-The aim is to make it easier for designers and developers to be able to work more closely together when it comes to design tokens. These tokens can be exported from tools such as Figma, in JSON format, and then used in Bit inside a theme component.
+The aim is to make it easier for designers and developers to be able to work more closely together when it comes to [design tokens](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/default-theme-tokens.tsx). These tokens can be exported from tools such as Figma, in JSON format, and then used in Bit inside a theme component.
 
-This way, designers can use the same design tokens in their designs and developers can use the same design tokens in their apps without having to do any extra work at converting these values so they can be used as CSS variables.
+This way, designers can use the same design tokens in their designs and developers can use the same design tokens in their apps without having to do any extra work at converting these values so they can be used as [CSS variables](https://bit.dev/learn-bit-react/theming/example/button/~code/button.module.scss).
 
-The example also includes a button component which shows how the theme provider is used with both CSS variables and CSS in JS as well as with various themes applied including the use of multiple themes in the one app.
+The example also includes a [button component](https://bit.dev/learn-bit-react/theming/example/button/~code/button.composition.tsx) which shows how the theme provider is used with both CSS variables and CSS in JS as well as with various themes applied including the use of multiple themes in the one app.
 
 ### Theme Provider
 
-This theme provider component uses a `create Theme` component from teambit that converts design tokens from a CamelCase (`MyColorText`) to kebab case adding in the extra dashes required so they can be used as CSS variables (`--my-color-text`) should you decide to use CSS variables. The values will also work as is if using CSS in JS (`defaultTheme.myColorText`).
+This [theme provider component](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/theme-provider.tsx) uses a `create Theme` component from teambit that converts design tokens from a PascalCase (`MyColorText`) to kebab case adding in the extra dashes required so they can be used as CSS variables (`--my-color-text`) should you decide to use CSS variables. The values will also work as camelCase for when using CSS in JS (`defaultTheme.myColorText`).
 
 ```js
 MyColorText: 'red',
 ```
 
-You can then use the CSS variables in a separate stylesheet or in the style tag:
+You can then use the CSS variables in a separate [stylesheet](https://bit.dev/learn-bit-react/theming/example/button/~code/button.module.scss) or in the style tag:
 
 ```css
 color: var(--my-color-text);
@@ -48,7 +48,7 @@ You can also write it like this which can be helpful for when using theme toggle
 
 ### Button Component
 
-The [Button](/ui/button) component shows how the theme provider is used with various examples including using CSS variable and CSS in Js as well as the use of multiple themes in the one app.
+The [Button](https://bit.dev/learn-bit-react/theming/example/button) component shows how the theme provider is used with various examples including using CSS variable and CSS in Js as well as the use of multiple themes in the one app.
 
 ## Tutorial
 
@@ -59,5 +59,5 @@ Check out the [tutorial](https://bit.dev/learn-bit-react/theming/tutorial) for a
 - [Default Theme Tokens](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/default-theme-tokens.tsx)
 - [Theme Provider](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/theme-provider.tsx)
 - [Dark Theme Tokens](https://bit.dev/learn-bit-react/theming/themes/dark-theme/~code/dark-theme-tokens.tsx)
-- [Button CSS Vars](https://bit.dev/learn-bit-react/theming/ui/button/~code/button.module.scss)
-- [Button Examples](https://bit.dev/learn-bit-react/theming/ui/button/~code/button.composition.tsx)
+- [Button CSS Vars](https://bit.dev/learn-bit-react/theming/example/button/~code/button.module.scss)
+- [Button Examples](https://bit.dev/learn-bit-react/theming/example/button/~code/button.composition.tsx)

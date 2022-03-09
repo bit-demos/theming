@@ -9,9 +9,15 @@
  */
 
 {
+    "example/button": {
+        "scope": "learn-bit-react.theming",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "theming/example/button"
+    },
     "readme": {
         "scope": "learn-bit-react.theming",
-        "version": "0.0.3",
+        "version": "0.0.6",
         "mainFile": "index.ts",
         "rootDir": "theming/readme"
     },
@@ -40,16 +46,10 @@
         "rootDir": "theming/themes/theme-provider"
     },
     "tutorial": {
-        "scope": "",
-        "version": "",
+        "scope": "learn-bit-react.theming",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "theming/tutorial"
-    },
-    "ui/button": {
-        "scope": "learn-bit-react.theming",
-        "version": "0.0.3",
-        "mainFile": "index.ts",
-        "rootDir": "theming/ui/button"
     },
     "$schema-version": "14.9.0"
 }
