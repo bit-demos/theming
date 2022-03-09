@@ -1,51 +1,32 @@
-# Theming in Bit
+## Theming in Bit
 
 This example includes a demo of how to do theming in React and Bit using a theme provider and various themes.
 
-The aim is to make it easier for designers and developers to be able to work more closely together when it comes to design tokens. These tokens can be exported from tools such as Figma, in JSON format, and then used in Bit inside a theme component.
+The aim is to make it easier for designers and developers to be able to seamlessly collaborate. Currently, designers deal in [design tokens](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/default-theme-tokens.tsx) (key-value pairs) and developers in javascript code, but there's no way to directly convert from one to the other without manual changes.
 
-This way, designers can use the same design tokens in their designs and developers can use the same design tokens in their apps without having to do any extra work at converting these values so they can be used as CSS variables.
-
-The example also includes a button component which shows how the theme provider is used with both CSS variables and CSS in JS as well as with various themes applied including the use of multiple themes in the one app.
-
-## Theme Provider
-
-This theme provider component uses a `create Theme` component from teambit that converts design tokens from a CamelCase (`MyColorText`) to kebab case adding in the extra dashes required so they can be used as CSS variables (`--my-color-text`) should you decide to use CSS variables. The values will also work as is if using CSS in JS (`defaultTheme.myColorText`).
+With this [Theme Provider](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/default-theme-tokens.tsx), design tokens can be exported from tools such as Figma, in JSON format, and then used as-is in Bit inside a theme component.
 
 ```js
-MyColorText: 'red',
+{
+  "MyColorText": "red"
+}
 ```
 
-You can then use the CSS variables in a separate stylesheet or in the style tag:
+The Theme Provider automatically converts json formatted design tokens to useful CSS formats, both modular and direct CSS variables, which are then translated into a theme which can be used in your app. Essentially, it bridges the entire gap between raw tokens to fully-themed code.
 
 ```css
 color: var(--my-color-text);
 ```
 
-Or you can use the design tokens as CSS in JS:
+The example also includes a [button component](https://bit.dev/learn-bit-react/theming/example/button) which demonstrates the CSS from tokens, being used with both [CSS variables](https://bit.dev/learn-bit-react/theming/example/button/~code/button.module.scss) and CSS-in-JS, as well as examples of creating and using multiple themes for varied branding across an organisation.
 
 ```js
-<p style={{ color: defaultTheme.myColorText }}>Default Theme</p>
+<button className={style.button}>Default Theme</button>
+<button style={{ color: 'var(--my-color-text)' }}>Default Theme</button>
+<button style={{ color: defaultTheme.myColorText }}>Default Theme</button>
+
 ```
 
-## Themes
+## Tutorial
 
-Themes can be used with the wrapper component to provide an easier way to add the theme to your app which can be useful especially when wrapping components inside of other themes.
-
-```js
-<DarkTheme>
-  <Button>Dark Theme</Button>
-</DarkTheme>
-```
-
-You can also write it like this which can be helpful for when using theme togglers or dynamically changing the theme value:
-
-```js
-<Theme.ThemeProvider overrides={darkTheme}>
-  <Button>Pink Theme</Button>
-</Theme.ThemeProvider>
-```
-
-## Button
-
-Button component shows how the theme provider is used with various examples including using CSS variable and CSS in Js as well as the use of multiple themes in the one app.
+Check out the [tutorial](https://bit.dev/learn-bit-react/theming/tutorial) for a step by step guide to creating your own theming in Bit.
