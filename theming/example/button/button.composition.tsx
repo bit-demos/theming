@@ -9,10 +9,6 @@ import {
 } from '@learn-bit-react/theming.themes.pink-theme';
 import { Button } from './button';
 
-export const ButtonNoTheme = () => {
-  return <Button>No theme</Button>;
-};
-
 export const ButtonDefaultTheme = () => {
   return (
     <Theme.ThemeProvider>

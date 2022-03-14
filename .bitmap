@@ -11,7 +11,7 @@
 {
     "example/button": {
         "scope": "learn-bit-react.theming",
-        "version": "0.0.3",
+        "version": "0.0.5",
         "mainFile": "index.ts",
         "rootDir": "theming/example/button"
     },
@@ -23,31 +23,31 @@
     },
     "themes/dark-theme": {
         "scope": "learn-bit-react.theming",
-        "version": "0.0.5",
+        "version": "0.0.7",
         "mainFile": "index.ts",
         "rootDir": "theming/themes/dark-theme"
     },
     "themes/light-theme": {
         "scope": "learn-bit-react.theming",
-        "version": "0.0.5",
+        "version": "0.0.7",
         "mainFile": "index.ts",
         "rootDir": "theming/themes/light-theme"
     },
     "themes/pink-theme": {
         "scope": "learn-bit-react.theming",
-        "version": "0.0.5",
+        "version": "0.0.7",
         "mainFile": "index.ts",
         "rootDir": "theming/themes/pink-theme"
     },
     "themes/theme-provider": {
         "scope": "learn-bit-react.theming",
-        "version": "0.0.5",
+        "version": "0.0.7",
         "mainFile": "index.ts",
         "rootDir": "theming/themes/theme-provider"
     },
     "tutorial": {
         "scope": "learn-bit-react.theming",
-        "version": "0.0.4",
+        "version": "0.0.7",
         "mainFile": "index.ts",
         "rootDir": "theming/tutorial"
     },

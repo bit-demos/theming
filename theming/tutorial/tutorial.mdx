@@ -80,7 +80,14 @@ export const Theme = createTheme({
 You supply the design tokens directly to the createTheme function and it does the rest for you to convert the tokens to usable css (both in modules and directly in your css)
 :::
 
-6. Add [compositions](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/theme-provider.composition.tsx), [tests](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/theme-provider.spec.tsx) and [docs](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/theme-provider.docs.mdx).
+6. Make sure you export your Theme and ThemeSchema from your theme provider's index file'.
+
+```js
+export { Theme } from './theme-provider';
+export type { ThemeSchema } from './theme-schema';
+```
+
+7. Add [compositions](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/theme-provider.composition.tsx), [tests](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/theme-provider.spec.tsx) and [docs](https://bit.dev/learn-bit-react/theming/themes/theme-provider/~code/theme-provider.docs.mdx).
 
 ## Step 2: Use your Theme Provider
 

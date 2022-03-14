@@ -7,8 +7,8 @@ export const DarkThemeCCSVars = () => {
     <DarkTheme>
       <p
         style={{
-          color: 'var(--my-color-text',
-          backgroundColor: 'var(--my-color-background',
+          color: 'var(--my-color-text)',
+          backgroundColor: 'var(--my-color-background)',
         }}
       >
         Dark Theme
@@ -37,8 +37,8 @@ export const DarkThemeDefaultFontSize = () => {
     <DarkTheme>
       <p
         style={{
-          color: 'var(--my-color-text',
-          backgroundColor: 'var(--my-color-background',
+          color: 'var(--my-color-text)',
+          backgroundColor: 'var(--my-color-background)',
           fontSize: 'var(--my-font-size)',
         }}
       >
