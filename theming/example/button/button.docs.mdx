@@ -2,29 +2,51 @@
 description: A Button component.
 ---
 
-import { Button } from './button';
 import { Theme } from '@learn-bit-react/theming.themes.theme-provider';
-import { LightTheme } from '@learn-bit-react/theming.themes.light-theme';
-import { DarkTheme } from '@learn-bit-react/theming.themes.dark-theme';
-
+import {
+  LightTheme,
+  lightTheme,
+} from '@learn-bit-react/theming.themes.light-theme';
+import {
+  DarkTheme,
+  darkTheme,
+} from '@learn-bit-react/theming.themes.dark-theme';
 import {
   PinkTheme,
   pinkTheme,
 } from '@learn-bit-react/theming.themes.pink-theme';
+import { Button } from './button';
 
 A Button component to show theming usage.
 
 ### Wrap the component in a ThemeProvider to apply the theme
 
-```js
-<Theme.ThemeProvider>
-  <Button>Default Theme</Button>
+Change the overrides property from `pinkTheme` to `darkTheme` or `lightTheme` to see the theme change or remove this property to see the default theme.
+
+```js live
+<Theme.ThemeProvider overrides={pinkTheme}>
+  <div>
+    <Button>Hello world</Button>
+    <button
+      style={{
+        color: 'var(--my-color-text)',
+        backgroundColor: 'var(--my-color-background)',
+        border: '2px solid var(--my-border-color)',
+        borderRadius: 'var(--my-border-radius)',
+        marginLeft: '10px',
+        padding: '5px',
+        fontSize: 'var(--my-font-size)',
+      }}
+    >
+      hello world!
+    </button>
+  </div>
 </Theme.ThemeProvider>
 ```
 
 ### Override the default theme with a pink theme
 
-```js
+```js live
 <Theme.ThemeProvider overrides={pinkTheme}>
   <Button>Pink Theme</Button>
 </Theme.ThemeProvider>
@@ -34,7 +56,7 @@ A Button component to show theming usage.
 
 This works the same as the example above
 
-```js
+```js live
 <PinkTheme>
   <Button>Pink Theme</Button>
 </PinkTheme>
@@ -42,12 +64,12 @@ This works the same as the example above
 
 ### Render button with different themes
 
-```js
+```js live
 <Theme.ThemeProvider>
   <Button>Default Theme</Button>
 
   <PinkTheme>
-    <Button>Pink Theme</Button>
+    <Button style={{ marginTop: '10px' }}>Pink Theme</Button>
   </PinkTheme>
 </Theme.ThemeProvider>
 ```
