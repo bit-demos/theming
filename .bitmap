@@ -47,7 +47,7 @@
     },
     "tutorial": {
         "scope": "learn-bit-react.theming",
-        "version": "0.0.9",
+        "version": "0.0.10",
         "mainFile": "index.ts",
         "rootDir": "theming/tutorial"
     },
